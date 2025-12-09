@@ -6,7 +6,7 @@ public class Student {
     String firstName;
     String lastName;
     int age;
-    ArrayList<String> courses;
+    ArrayList<Course> courses;
 
     public Student(String firstName, String lastName, int age) {
         this.firstName = firstName;
@@ -19,20 +19,20 @@ public class Student {
         System.out.println("First Name: " + firstName);
         System.out.println("Last Name: " + lastName);
         System.out.println("Age: " + age);
-        for (String course : courses) {
-            System.out.println("Enrolled Course: " + course);
+        for (Course course : courses) {
+            System.out.println("Enrolled Course: " + course.getName());
         }
     }
 
     public static void main(String[] args) {
         Student student = new Student("John", "Doe", 20);
-        student.enrollCourse("Mathematics");
-        student.enrollCourse("Computer Science");
+        student.enrollCourse(new Course("Mathematics", "Basic Math Course", new Degree("Master")));
+        student.enrollCourse(new Course("Computer Science", "Advance Computer Science", new Degree("Master")));
         student.printInfos();
     }
 
-    public void enrollCourse(String courseName) {
-        courses.add(courseName);
+    public void enrollCourse(Course course) {
+        courses.add(course);
     }
 
     public String getFirstName() {
@@ -59,11 +59,11 @@ public class Student {
         this.age = age;
     }
 
-    public ArrayList<String> getCourses() {
+    public ArrayList<Course> getCourses() {
         return courses;
     }
 
-    public void setCourses(ArrayList<String> courses) {
+    public void setCourses(ArrayList<Course> courses) {
         this.courses = courses;
     }
 }

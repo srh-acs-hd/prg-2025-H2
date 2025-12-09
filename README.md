@@ -1,4 +1,4 @@
-# prg-2025-H2
+# Programming SRH 2025 Winter
 Repository for Programming Module in 2025
 
 # Create a Hello World Project with IntelliJ
