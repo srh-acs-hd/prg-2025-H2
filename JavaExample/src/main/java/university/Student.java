@@ -2,9 +2,7 @@ package university;
 
 import java.util.ArrayList;
 
-public class Student {
-    String firstName;
-    String lastName;
+public class Student extends Person implements InformationPrinter{
     int age;
     ArrayList<Course> courses;
 
@@ -15,20 +13,14 @@ public class Student {
         this.courses = new ArrayList<>();
     }
 
-    public void printInfos() {
+    @Override
+    public void printInformation() {
         System.out.println("First Name: " + firstName);
         System.out.println("Last Name: " + lastName);
         System.out.println("Age: " + age);
         for (Course course : courses) {
             System.out.println("Enrolled Course: " + course.getName());
         }
-    }
-
-    public static void main(String[] args) {
-        Student student = new Student("John", "Doe", 20);
-        student.enrollCourse(new Course("Mathematics", "Basic Math Course", new Degree("Master")));
-        student.enrollCourse(new Course("Computer Science", "Advance Computer Science", new Degree("Master")));
-        student.printInfos();
     }
 
     public void enrollCourse(Course course) {

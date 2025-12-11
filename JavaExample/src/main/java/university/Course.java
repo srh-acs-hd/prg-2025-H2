@@ -1,11 +1,28 @@
 package university;
 
 public class Course {
+    public static int courseCount = 0;
+
+    public Course() {
+        courseCount += 1;
+    }
+
+    public static int getCourseCount() {
+        return courseCount;
+    }
+
+    public static void main(String[] args) {
+        // runs the program
+    }
+
     String name;
     String description;
     Degree forDegree;
 
+
+
     public Course(String name, String description, Degree forDegree) {
+        this();
         this.name = name;
         this.description = description;
         this.forDegree = forDegree;
