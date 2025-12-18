@@ -15,7 +15,6 @@ public class CSVReader {
         return FileUtils.readLines(new File(filePath), "UTF-8");
     }
 
-
     public static ArrayList<Student> readStudents(String filePath) throws IOException {
         List<String> lines = readCSV(filePath);
         ArrayList<Student> students = new ArrayList<>();
@@ -99,7 +98,7 @@ public class CSVReader {
                 Professor professor = ListUtils.findProfessorById(profId, professors);
                 Course course = ListUtils.findCourseById(courseId, courses);
                 if (professor != null && course != null) {
-                    System.out.println("Assigning course " + course.getName() + " to professor " + professor.firstName);
+                    System.out.println("Assigning course " + course.getName() + " to professor " + professor.getFirstName());
                     professor.addCourseTeaching(course);
                 }
             }

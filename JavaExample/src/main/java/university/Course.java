@@ -11,14 +11,10 @@ public class Course {
         return courseCount;
     }
 
-    public static void main(String[] args) {
-        // runs the program
-    }
     int id;
     String name;
     String description;
     String forDegree;
-
 
 
     public Course(int id, String name, String description, String forDegree) {

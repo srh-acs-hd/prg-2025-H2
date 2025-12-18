@@ -2,7 +2,7 @@ package university;
 
 import java.util.ArrayList;
 
-public class Professor extends Person {
+public class Professor extends Person implements InformationPrinter {
     public String officeNumber;
     public ArrayList<Course> coursesTeaching;
 
