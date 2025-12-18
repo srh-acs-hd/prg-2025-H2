@@ -58,8 +58,16 @@ public class UniversityApplication {
     }
 
     public static void main(String[] args) {
-        UniversityApplication app = new UniversityApplication();
-
+        //UniversityApplication app = new UniversityApplication();
+        Person p1 = new Person("John", "Doe");
+        System.out.println(p1.getFirstName());
+        //p1.printFullName();
+        Person p2 = new Person();
+        System.out.println(p2.getFirstName());
+        p2.setFirstName("Jane");
+        p2.setLastName("Smith");
+        System.out.println(p2.getFirstName());
+        //p2.printFullName();
         /*
         Student student = new Student(1,"John", "Doe", 20);
         student.enrollCourse(new Course(0,"Mathematics", "Basic Math Course", "Master"));

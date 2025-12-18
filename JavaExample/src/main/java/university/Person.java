@@ -1,9 +1,9 @@
 package university;
 
 public class Person {
-    int id;
-    public String firstName;
-    public String lastName;
+    protected int id;
+    protected String firstName;
+    protected String lastName;
 
     public Person() {
         this.firstName = "";
@@ -28,7 +28,7 @@ public class Person {
     }
 
     public String getFirstName() {
-        return firstName;
+        return this.firstName;
     }
 
     public void setFirstName(String firstName) {
