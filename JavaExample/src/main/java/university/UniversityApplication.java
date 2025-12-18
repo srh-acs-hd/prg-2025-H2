@@ -15,9 +15,9 @@ public class UniversityApplication {
 
     private void loadData() {
         try {
-            this.students = CSVReader.readStudents("C:\\srh\\github\\prg-2025-H2\\JavaExample\\src\\main\\java\\university\\data\\students.csv");
-            this.courses = CSVReader.readCourses("C:\\srh\\github\\prg-2025-H2\\JavaExample\\src\\main\\java\\university\\data\\courses.csv");
-            this.professors = CSVReader.readProfessors("C:\\srh\\github\\prg-2025-H2\\JavaExample\\src\\main\\java\\university\\data\\professors.csv");
+            this.students = CSVReader.readStudents(".\\data\\students.csv");
+            this.courses = CSVReader.readCourses(".\\data\\courses.csv");
+            this.professors = CSVReader.readProfessors(".\\data\\professors.csv");
         } catch (IOException e) {
             System.out.println(("Error reading  CSV: " + e.getMessage()));
         }
