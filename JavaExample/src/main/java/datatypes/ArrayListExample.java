@@ -16,23 +16,25 @@ public class ArrayListExample {
 		list.add("Orange");
 		
 		// Traversing list through Iterator
-		
+
 		Iterator<String> itr = list.iterator();// getting the Iterator
 		while (itr.hasNext()) {// check if iterator has the elements
 			System.out.println(itr.next());// printing the element and move to next
 		}
-		/*
+
+
+        /*
 		System.out.println("");
 		for (String element : list) {
 			System.out.println(element);
 		}
-		
+
 		// reversed order
 		System.out.println("");
 		for (int i= list.size()-1;i>=0;i--) {
 			System.out.println(""+i+" : "+list.get(i));
 		}
-		*/
+        */
 	}
 
 }

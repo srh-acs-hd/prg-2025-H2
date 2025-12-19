@@ -22,17 +22,20 @@ public class ArraysExample {
             System.out.println(strArr[i]);
         }
         */
+
         System.out.println("");
-        
+        /*
         for (int i=0;i<strArr1.length;i++)
         {
             System.out.println(strArr1[i]);
         }
+        */
         
-        
-        for (String s : strArr1) {
+        for (String s : strArr) {
         	System.out.println(s);
         }
+
+
         
     }
 

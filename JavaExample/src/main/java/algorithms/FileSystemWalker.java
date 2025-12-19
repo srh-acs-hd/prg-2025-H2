@@ -4,8 +4,9 @@ import java.io.File;
 import java.util.ArrayList;
 
 public class FileSystemWalker {
-	
-	// for ease of use the main function is in the calls
+    ArrayList<String> entries = new ArrayList<String>();
+
+    // for ease of use the main function is in the calls
 	public static void main(String args[]) {
 		FileSystemWalker fsw = new FileSystemWalker();
 		fsw.readFolder(new File("C:\\srh\\github\\prg-2025-H2\\JavaExample\\"));
@@ -13,7 +14,6 @@ public class FileSystemWalker {
 	}
 	
 	// a list of all found entries
-	ArrayList<String> entries = new ArrayList<String>();
 
 	public FileSystemWalker() {
 		// intializes the list
@@ -30,7 +30,6 @@ public class FileSystemWalker {
 		File[] files = folder.listFiles();
 		for (File f : files) {
 			// we add each entry
-			this.entries.add(f.getAbsolutePath());
 			if (f.isDirectory()) {
 				// read the sub folder content
 				this.readFolder(f);

@@ -18,12 +18,18 @@ public class HashSetDemo {
 	}
 
 	public static void main(String[] args) {
-		String s = "helo xqty ";
+        /*
+		String s = "hello xqty ";
 		boolean ans = isUnique(s);
 		if (ans)
 			System.out.println("string has unique characters");
 		else
 			System.out.println("there are repeated characters");
-
+        */
+        HashSet<String> set = new HashSet<String>();
+        set.add("Apple");
+        set.add("Banana");
+        set.add("Apple");
+        System.out.println(set);
 	}
 }

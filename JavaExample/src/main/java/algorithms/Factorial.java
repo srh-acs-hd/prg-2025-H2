@@ -3,7 +3,7 @@ package algorithms;
 public class Factorial {
 
 	public static void main(String[] args) {
-		int result = factorial(8);
+		int result = factorial(12);
 		System.out.println("Result: "+result);
 	}
 	
@@ -19,10 +19,9 @@ public class Factorial {
 	
 	public static int iterativeFactorial(int n) {
 		int result = 1;
-		for (int i=1;i <= n;i++) {
-		
+		for (int i=1; i <= n; i++) {
 			result = result * i;
-			System.out.println(""+i+"  -> "+result);
+			System.out.println("" + i + "  -> " + result);
 		}
 		return result;
 	}

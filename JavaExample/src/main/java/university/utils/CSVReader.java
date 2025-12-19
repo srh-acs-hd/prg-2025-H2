@@ -33,6 +33,7 @@ public class CSVReader {
         return students;
     }
 
+
     public static ArrayList<Course> readCourses(String filePath) throws IOException {
         List<String> lines = readCSV(filePath);
         ArrayList<Course> courses = new ArrayList<Course>();
