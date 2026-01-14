@@ -2,6 +2,8 @@ package university;
 
 import java.io.IOException;
 import java.util.ArrayList;
+
+import university.db.DatabaseConnector;
 import university.utils.CSVReader;
 
 public class UniversityApplication {
@@ -12,7 +14,6 @@ public class UniversityApplication {
     private ArrayList<Course> courses;
 
     public UniversityApplication() {
-        this.loadData();
     }
 
     private void loadData() {
@@ -59,9 +60,40 @@ public class UniversityApplication {
         this.courses = courses;
     }
 
+    public void saveDataToDB() throws Exception {
+        DatabaseConnector dbc = new DatabaseConnector("jdbc:postgresql://localhost:5432/prg", "postgres", "admin");
+        for (Student student: this.students) {
+            dbc.insertStudent(student);
+        }
+        for (Professor professor: this.professors) {
+            dbc.insertProfessor(professor);
+        }
+        for (Course course: this.courses) {
+            dbc.insertCourse(course);
+        }
+        for (Student student: this.students) {
+            for (Course course: student.getCourses()) {
+                dbc.assignCourseToStudent(student.getId(), course.getId());
+            }
+        }
+        for (Professor professor: this.professors) {
+            for (Course course: professor.getCoursesTeaching()) {
+                dbc.assignCourseToProfessor(professor.getId(), course.getId());
+            }
+        }
+    }
+
     public static void main(String[] args) {
+        DatabaseConnector dbc = new DatabaseConnector("jdbc:postgresql://localhost:5432/prg", "postgres", "admin");
+        dbc.cleanDB();
         UniversityApplication app = new UniversityApplication();
         // now data is loaded
+        app.loadData();
+        try {
+            app.saveDataToDB();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }
