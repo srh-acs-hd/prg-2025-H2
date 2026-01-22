@@ -38,11 +38,21 @@ public class Game {
             if (guess == secretNumber) {
                 System.out.println("Congratulations! You've guessed the number.");
                 break;
+            } else if (guess > secretNumber) {
+                System.out.println("Too bad, your number is too high");
             } else {
-                System.out.println("Incorrect guess. Try again.");
+                System.out.println("Too bad, your number is too low");
             }
         }
         // DRY - Don't repeat yourself, do not WET (Write everything twice)
         System.out.println("You needed " + numberOfAttempts + " number of attempts.");
     }
 }
+
+/* Binary Search
+    1) Use a value in the middle of the search space
+    2) check the number, if it is the searched number, quit
+    3) if the number is lower than the searched one use the right hand part (higher values)
+    4) otherwise use the left hand part (lower values)
+    5) goto step 1
+ */
