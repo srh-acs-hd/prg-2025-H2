@@ -15,6 +15,16 @@ public class Game {
         Stage 2:
             The player receives feedback on whether their guess
             is too high or too low.
+        Stage 3:
+            Dismiss stage 2, but give the player another feedback:
+            - if a digit is present and on the correct spot, display a star
+            - if a digit is present and not on the correct spot, display a circle
+            - otherwise dont display anything
+            e.g.
+             secret number: 1234
+             guess:         1572 => *o
+             guess:         7243 => *oo
+            Warning: As a coding constraints: DO NOT USE STRING OPERATIONS
      */
     
     public static void main(String[] args) {
