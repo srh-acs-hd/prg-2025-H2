@@ -9,21 +9,28 @@ public class Collatz {
         Q3:  What is the maximum loop count for all positive n > 0 ?
     */
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Please enter n: ");
-        int n = scanner.nextInt();
+        long maxLoopCount = 0;
+        long numberWithMaxLoopCount = 0;
 
-        int loopCount = 0;
-        while (n != 1) {
-            if (n % 2 == 0) {
-                n = n/2;
+        for (int i=1; i<=Integer.MAX_VALUE; i++) {
+            long n = i;
+            long loopCount = 0;
+            while (n != 1) {
+                if (n % 2 == 0) {
+                    n = n/2;
+                }
+                else {
+                    n = 3*n + 1;
+                }
+                loopCount++;
             }
-            else {
-                n = 3*n + 1;
+
+            if (loopCount > maxLoopCount) {
+                System.out.println(i + " -> " + loopCount);
+                maxLoopCount = loopCount;
+                numberWithMaxLoopCount = i;
             }
-            loopCount++;
         }
-
-        System.out.println("Collatz sequence number for " + n + " is " + loopCount);
+        System.out.println("Maximum loop count is " + maxLoopCount + " for number " + numberWithMaxLoopCount);
     }
 }
