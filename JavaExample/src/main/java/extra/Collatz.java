@@ -12,6 +12,8 @@ public class Collatz {
         System.out.print("Please enter n: ");
         int n = scanner.nextInt();
 
+        int loopCount = 0;
+
         while (n != 1) {
             if (n % 2 == 0) {
                 n = n/2;
@@ -19,8 +21,10 @@ public class Collatz {
             else {
                 n = 3*n + 1;
             }
+            // System.out.println(n);
+            loopCount++;
         }
 
-        System.out.println("Terminated");
+        System.out.println("Collatz sequence number for " + n + " is " + loopCount);
     }
 }
