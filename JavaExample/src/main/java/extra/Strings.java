@@ -2,7 +2,7 @@ package extra;
 
 public class Strings {
 
-    public static class MyValue {
+    private static class MyValue {
         private String value;
 
         public MyValue(String value) {
@@ -63,6 +63,8 @@ public class Strings {
         System.out.println("Execution time: " + (endTime - startTime) + " ns");
     }
 
+    // Called by Reference (CbR)
+    // - WARNING: Parameters might be changed by the method
     private static void swap(MyValue s1, MyValue s2) {
         String temp = s1.getValue();
         s1.setValue(s2.getValue());
